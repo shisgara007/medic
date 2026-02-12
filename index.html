@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Торсионная дистония: Современные методы лечения 2026</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Chosen Palette: "Medical Calm" -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Slate-50 */
+            color: #334155; /* Slate-700 */
+        }
+        
+        /* Custom Utilities for Chart Containers */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        html { scroll-behavior: smooth; }
+
+        /* Interactive Card Styles */
+        .interactive-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            cursor: pointer;
+        }
+        .interactive-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #0f766e;
+        }
+        .interactive-card.active {
+            border-left: 4px solid #0f766e;
+            background-color: #f0fdfa; /* teal-50 */
+            transform: scale(1.02);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-btn.active {
+            border-bottom: 2px solid #0f766e;
+            color: #0f766e;
+            font-weight: 600;
+        }
+
+        /* Rehab Detail Box Animation */
+        .rehab-details {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-brain text-teal-700 text-2xl mr-3"></i>
+                    <span class="font-bold text-xl text-slate-800">NeuroReport 2026</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#overview" class="text-slate-600 hover:text-teal-700 transition">Обзор</a>
+                    <a href="#diagnosis" class="text-slate-600 hover:text-teal-700 transition">Диагностика</a>
+                    <a href="#treatment" class="text-slate-600 hover:text-teal-700 transition">Лечение</a>
+                    <a href="#rehab" class="text-slate-600 hover:text-teal-700 transition">Реабилитация</a>
+                    <a href="#elderly" class="px-3 py-1 bg-rose-50 text-rose-700 rounded-full text-sm font-semibold hover:bg-rose-100 transition">Фокус: 60+</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-teal-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-2">
+            <a href="#overview" class="block py-2 text-slate-600">Обзор</a>
+            <a href="#diagnosis" class="block py-2 text-slate-600">Диагностика</a>
+            <a href="#treatment" class="block py-2 text-slate-600">Лечение</a>
+            <a href="#rehab" class="block py-2 text-slate-600">Реабилитация</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <!-- Header -->
+        <header class="text-center max-w-4xl mx-auto">
+            <div class="inline-block bg-teal-50 text-teal-800 text-xs px-3 py-1 rounded-full font-semibold mb-4 uppercase tracking-wide">
+                Клинические рекомендации 2025-2026
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6 leading-tight">
+                Современные методы лечения <span class="text-teal-700">торсионной дистонии</span>
+            </h1>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Интерактивный отчет с фокусом на диагностику, терапию и реабилитацию пациентов старшей возрастной группы.
+            </p>
+        </header>
+
+        <!-- Section 1: Overview -->
+        <section id="overview" class="scroll-mt-20">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-800 flex items-center">
+                    <i class="fas fa-chart-pie mr-3 text-teal-600"></i> Эпидемиология
+                </h2>
+                <p class="mt-2 text-slate-600">
+                    Рост заболеваемости фокальными формами среди женщин в постменопаузе.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 interactive-card">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium">Распространенность</p>
+                            <h3 class="text-3xl font-bold text-slate-800 mt-1">16-20<span class="text-lg text-slate-400 font-normal">/100 тыс.</span></h3>
+                        </div>
+                        <div class="p-2 bg-blue-50 rounded-lg text-blue-600"><i class="fas fa-users"></i></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 interactive-card">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium">Гендерный дисбаланс</p>
+                            <h3 class="text-3xl font-bold text-slate-800 mt-1">2:1</h3>
+                        </div>
+                        <div class="p-2 bg-pink-50 rounded-lg text-pink-600"><i class="fas fa-venus"></i></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-4">Преобладание женщин</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 interactive-card">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium">Золотой стандарт</p>
+                            <h3 class="text-3xl font-bold text-slate-800 mt-1">BoNT-A</h3>
+                        </div>
+                        <div class="p-2 bg-teal-50 rounded-lg text-teal-600"><i class="fas fa-syringe"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Age Chart -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                <h3 class="text-lg font-semibold text-slate-800 mb-4">Распределение форм по возрасту дебюта</h3>
+                <div class="chart-container">
+                    <canvas id="ageDistributionChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Diagnosis Logic -->
+        <section id="diagnosis" class="scroll-mt-20">
+            <h2 class="text-2xl font-bold text-slate-800 flex items-center mb-6">
+                <i class="fas fa-stethoscope mr-3 text-teal-600"></i> Алгоритм Диагностики
+            </h2>
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+                    <!-- Line -->
+                    <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-100 -z-0 transform -translate-y-1/2"></div>
+                    <!-- Steps -->
+                    <div class="relative z-10 bg-white p-4 border-2 border-teal-100 rounded-lg text-center hover:border-teal-500 transition cursor-pointer group" onclick="showDiagDetail('step1')">
+                        <div class="w-10 h-10 mx-auto bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-2 font-bold group-hover:bg-teal-600 group-hover:text-white">1</div>
+                        <h4 class="font-bold text-slate-700">Осмотр</h4>
+                    </div>
+                    <div class="relative z-10 bg-white p-4 border-2 border-teal-100 rounded-lg text-center hover:border-teal-500 transition cursor-pointer group" onclick="showDiagDetail('step2')">
+                        <div class="w-10 h-10 mx-auto bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-2 font-bold group-hover:bg-teal-600 group-hover:text-white">2</div>
+                        <h4 class="font-bold text-slate-700">Исключение БП</h4>
+                    </div>
+                    <div class="relative z-10 bg-white p-4 border-2 border-teal-100 rounded-lg text-center hover:border-teal-500 transition cursor-pointer group" onclick="showDiagDetail('step3')">
+                        <div class="w-10 h-10 mx-auto bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-2 font-bold group-hover:bg-teal-600 group-hover:text-white">3</div>
+                        <h4 class="font-bold text-slate-700">МРТ (SWI)</h4>
+                    </div>
+                    <div class="relative z-10 bg-white p-4 border-2 border-teal-100 rounded-lg text-center hover:border-teal-500 transition cursor-pointer group" onclick="showDiagDetail('step4')">
+                        <div class="w-10 h-10 mx-auto bg-teal-100 text-teal-600 rounded-full flex items-center justify-center mb-2 font-bold group-hover:bg-teal-600 group-hover:text-white">4</div>
+                        <h4 class="font-bold text-slate-700">Генетика</h4>
+                    </div>
+                </div>
+                <div id="diag-detail-box" class="mt-8 p-6 bg-slate-50 rounded-lg border-l-4 border-teal-500">
+                    <h3 id="diag-title" class="text-lg font-bold text-slate-800">Выберите этап</h3>
+                    <p id="diag-desc" class="text-slate-600 mt-2">Нажмите на карточки этапов выше.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Treatment -->
+        <section id="treatment" class="scroll-mt-20">
+            <h2 class="text-2xl font-bold text-slate-800 flex items-center mb-6">
+                <i class="fas fa-pills mr-3 text-teal-600"></i> Терапия
+            </h2>
+            <div class="flex space-x-6 border-b border-slate-200 mb-6 overflow-x-auto">
+                <button class="tab-btn active pb-3 px-1 text-slate-600 hover:text-teal-700" onclick="switchTab('conservative')">Консервативное</button>
+                <button class="tab-btn pb-3 px-1 text-slate-600 hover:text-teal-700" onclick="switchTab('botox')">Ботулинотерапия</button>
+                <button class="tab-btn pb-3 px-1 text-slate-600 hover:text-teal-700" onclick="switchTab('surgical')">Хирургия</button>
+            </div>
+            
+            <div id="conservative-content" class="tab-content animate-fade-in">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white border border-rose-200 rounded-lg p-4 relative">
+                        <div class="absolute top-0 right-0 bg-rose-500 text-white text-xs px-2 py-1 rounded-bl">Осторожно 60+</div>
+                        <h4 class="font-bold">Холинолитики</h4>
+                        <p class="text-sm text-slate-600">Риск когнитивных нарушений.</p>
+                    </div>
+                    <div class="bg-white border border-slate-200 rounded-lg p-4">
+                        <h4 class="font-bold">Баклофен</h4>
+                        <p class="text-sm text-slate-600">Агонист GABAB. Риск седации.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="botox-content" class="tab-content hidden animate-fade-in">
+                 <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 mb-4">
+                    <h4 class="font-bold mb-2">Эффективность BoNT-A</h4>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="botoxEfficacyChart"></canvas>
+                    </div>
+                 </div>
+            </div>
+            <div id="surgical-content" class="tab-content hidden animate-fade-in">
+                <div class="p-4 bg-slate-50 rounded-lg border-l-4 border-indigo-500 mb-4">
+                    <h4 class="font-bold text-indigo-700">DBS (GPi)</h4>
+                    <p class="text-sm">Эффективность 50-80%. Риски анестезии.</p>
+                </div>
+                <div class="p-4 bg-slate-50 rounded-lg border-l-4 border-teal-500">
+                    <h4 class="font-bold text-teal-700">MRgFUS</h4>
+                    <p class="text-sm">Неинвазивная таламотомия. Тренд 2025.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Rehab (INTERACTIVE UPDATE) -->
+        <section id="rehab" class="scroll-mt-20">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-slate-800 flex items-center">
+                    <i class="fas fa-hand-holding-medical mr-3 text-teal-600"></i> Реабилитация и Образ Жизни
+                </h2>
+                <p class="mt-2 text-slate-600">
+                    Нажмите на карточку метода для получения подробных инструкций и схем применения.
+                </p>
+            </div>
+
+            <!-- Interactive Cards Row -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Card 1: Sensory Tricks -->
+                <div id="card-sensory" class="bg-white border border-slate-200 p-6 rounded-xl interactive-card" onclick="showRehabDetail('sensory')">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mr-4">
+                            <i class="fas fa-magic text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-lg">Сенсорные трюки</h3>
+                    </div>
+                    <p class="text-sm text-slate-500">Geste antagoniste: "обман" мозга для снятия спазма.</p>
+                </div>
+
+                <!-- Card 2: Kinesio Taping (Updated) -->
+                <div id="card-taping" class="bg-white border border-slate-200 p-6 rounded-xl interactive-card" onclick="showRehabDetail('taping')">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                            <i class="fas fa-band-aid text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-lg">Кинезиотейпирование</h3>
+                    </div>
+                    <p class="text-sm text-slate-500">Классические схемы: ингибиция спазма и фасилитация.</p>
+                </div>
+
+                <!-- Card 3: Biofeedback (Updated) -->
+                <div id="card-bio" class="bg-white border border-slate-200 p-6 rounded-xl interactive-card" onclick="showRehabDetail('bio')">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
+                            <i class="fas fa-wave-square text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-800 text-lg">БОС-терапия</h3>
+                    </div>
+                    <p class="text-sm text-slate-500">Домашние тренировки и клинический протокол ЭМГ.</p>
+                </div>
+            </div>
+
+            <!-- Dynamic Detail Container -->
+            <div id="rehab-detail-container" class="hidden bg-white rounded-xl shadow-lg border border-teal-100 overflow-hidden animate-fade-in">
+                <div class="bg-teal-50 px-6 py-4 border-b border-teal-100 flex justify-between items-center">
+                    <h3 id="rehab-detail-title" class="text-xl font-bold text-teal-800">Заголовок метода</h3>
+                    <button onclick="closeRehabDetail()" class="text-slate-400 hover:text-slate-600">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="rehab-detail-content" class="p-8 text-slate-700 space-y-4">
+                    <!-- Content will be injected here via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Elderly Focus -->
+        <section id="elderly" class="scroll-mt-20 bg-rose-50/50 p-8 rounded-2xl border border-rose-100">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-rose-800 flex items-center">
+                    <i class="fas fa-user-injured mr-3"></i> Особенности у Пожилых (60+)
+                </h2>
+                <p class="mt-2 text-slate-700">
+                    Мультидисциплинарный подход: остеопороз, когнитивные риски, социальная изоляция.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h4 class="font-bold text-rose-700"><i class="fas fa-bone mr-2"></i>Остеопороз</h4>
+                        <p class="text-xs text-slate-600">Риск компрессионных переломов при торсионных спазмах.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h4 class="font-bold text-rose-700"><i class="fas fa-eye mr-2"></i>Синдром Мейжа</h4>
+                        <p class="text-xs text-slate-600">Блефароспазм + оромандибулярная дистония = риск функциональной слепоты.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-rose-100">
+                    <h4 class="text-center font-bold text-slate-700 mb-2">Профиль рисков (60+ vs Молодые)</h4>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="elderlyRiskChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-200 pt-8 pb-12 text-center mt-12">
+            <p class="text-slate-500 text-sm">© 2026 Информационный портал "NeuroReport".</p>
+            <p class="text-slate-400 text-xs mt-2">Данные носят справочный характер. Консультируйтесь с врачом.</p>
+        </footer>
+
+    </main>
+
+    <!-- Logic Script -->
+    <script>
+        // --- Data: Diagnosis Steps ---
+        const diagSteps = {
+            'step1': {
+                title: 'Шаг 1: Клинический осмотр (Специфика 60+)',
+                desc: 'Ключ: "Geste antagoniste" работает при дистонии, но не при других треморах. Проверка "зеркальных движений".'
+            },
+            'step2': {
+                title: 'Шаг 2: Исключение Паркинсонизма',
+                desc: 'При изолированной дистонии НЕТ гипокинезии, НЕТ декремента амплитуды, сохранно обоняние.'
+            },
+            'step3': {
+                title: 'Шаг 3: Нейровизуализация (МРТ)',
+                desc: 'Исключение вторичных причин (опухоль, инсульт). Режим SWI для исключения накопления железа.'
+            },
+            'step4': {
+                title: 'Шаг 4: Генетика',
+                desc: 'Проверка панелей GNAL, THAP1, ANO3 и исключение болезни Вильсона.'
+            }
+        };
+
+        // --- Data: Rehab Details (FACT CHECKED) ---
+        const rehabData = {
+            'sensory': `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg text-teal-800 mb-3"><i class="fas fa-bullseye mr-2"></i>Специфика: Правосторонний спазм туловища</h4>
+                        <p class="text-sm text-slate-600 mb-4">Задача трюка — не удержать тело силой, а дать мозгу альтернативный сенсорный сигнал (перегрузка проприоцептивной системы), чтобы разорвать патологическую дугу возбуждения.</p>
+                        
+                        <h5 class="font-bold text-slate-700 mt-4 mb-2">Эффективные точки и приемы:</h5>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="bg-teal-100 text-teal-800 text-xs font-bold px-2 py-1 rounded mr-2 mt-0.5">Тактильные</span>
+                                <span class="text-sm text-slate-700">Легкое касание тыльной стороной ладони к правой щеке, затылку или верхней части правой ягодицы (триггерные зоны). Прием "Рамка": положить левую руку на правый бок без давления.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2 py-1 rounded mr-2 mt-0.5">Рюкзак (Backpack sign)</span>
+                                <span class="text-sm text-slate-700">Ношение легкого рюкзака (1-1.5 кг) активирует кожные рецепторы плеч и спины. Это создает постоянный сенсорный "шум", который может блокировать сигнал спазма при ходьбе.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="bg-rose-100 text-rose-800 text-xs font-bold px-2 py-1 rounded mr-2 mt-0.5">Биомеханика</span>
+                                <span class="text-sm text-slate-700">Смена двигательной программы: ходьба с руками, сцепленными в замок на затылке ("поза отдыхающего"). Растягивает широчайшие мышцы и меняет центр тяжести.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                        <h4 class="font-bold text-slate-700 mb-2">Алгоритм пациента</h4>
+                        <ol class="list-decimal list-inside text-sm text-slate-600 space-y-2">
+                            <li>Найти эффективную сенсорную точку перед зеркалом.</li>
+                            <li>Применять касание <strong>до</strong> начала движения (превентивно).</li>
+                            <li><strong>Визуализация:</strong> Со временем переходить к ментальному представлению касания, чтобы уменьшить заметность трюка для окружающих.</li>
+                        </ol>
+                    </div>
+                </div>
+            `,
+            'taping': `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-lg text-blue-800 mb-3"><i class="fas fa-layer-group mr-2"></i>Классическое Кинезиотейпирование</h4>
+                        <p class="text-sm text-slate-600 mb-4">При правостороннем торсионном спазме (с вовлечением m. longissimus thoracis, m. iliocostalis) применяется стратегия асимметричной коррекции.</p>
+                        
+                        <div class="bg-red-50 p-4 rounded border border-red-100 mb-4">
+                            <h5 class="font-bold text-red-800 text-sm mb-1">Правая сторона (Спазм): Ингибиция</h5>
+                            <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                                <li><strong>Цель:</strong> Снижение мышечного тонуса (расслабление).</li>
+                                <li><strong>Техника:</strong> Аппликация от места прикрепления к началу мышцы (снизу-вверх для мышц спины часто используется обратный вектор или сверху-вниз в зависимости от анатомии конкретного пучка).</li>
+                                <li><strong>Форма:</strong> I-образная или Y-образная полоса.</li>
+                                <li><strong>Натяжение:</strong> 0-15% (Paper-off). Тейп наносится на <strong>максимально растянутую мышцу</strong> (наклон туловища влево и вперед). При выпрямлении образуются "волны".</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="bg-green-50 p-4 rounded border border-green-100 mb-4">
+                            <h5 class="font-bold text-green-800 text-sm mb-1">Левая сторона (Слабость): Фасилитация</h5>
+                            <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+                                <li><strong>Цель:</strong> Повышение тонуса, поддержка корсета.</li>
+                                <li><strong>Техника:</strong> От начала к месту прикрепления (снизу-вверх).</li>
+                                <li><strong>Форма:</strong> I-образная полоса вдоль паравертебральной линии.</li>
+                                <li><strong>Натяжение:</strong> 25-35%. Активирует механорецепторы для "включения" мышцы в работу.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-amber-50 p-4 rounded border border-amber-100">
+                            <h4 class="font-bold text-amber-800 text-sm"><i class="fas fa-exclamation-circle mr-2"></i>Важно</h4>
+                            <p class="text-xs text-amber-900 mt-1">
+                                Использовать стандартные хлопковые кинезио-тейпы шириной 5 см. Время ношения 3-5 дней. Снимать аккуратно, скатывая, по направлению роста волос, лучше после душа.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            `,
+            'bio': `
+                <div class="flex flex-col space-y-8">
+                    <!-- 1. Home Training -->
+                    <div class="bg-white rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-800 mb-4 border-b border-indigo-100 pb-2">
+                            <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded text-sm mr-2">Этап 1</span>
+                            Домашние тренировки (Визуальная и проприоцептивная коррекция)
+                        </h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-slate-50 p-4 rounded border border-slate-200">
+                                <strong class="text-slate-800 block mb-2"><i class="fas fa-mirror mr-2"></i>Зеркальная терапия</strong>
+                                <p class="text-sm text-slate-600 mb-2">При дистонии нарушена "схема тела" в мозге. Пациент чувствует себя прямым, когда стоит криво.</p>
+                                <ul class="list-decimal list-inside text-xs text-slate-600 space-y-1">
+                                    <li>Встать перед большим зеркалом.</li>
+                                    <li>Закрыть глаза и выровнять спину "как кажется правильно".</li>
+                                    <li>Открыть глаза и оценить ошибку.</li>
+                                    <li>Глядя в зеркало, выровнять плечи и таз (зрительный контроль).</li>
+                                    <li>Закрыть глаза и запомнить <strong>новое</strong> (непривычное) ощущение ровной спины. Повторять 5 мин/день.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-slate-50 p-4 rounded border border-slate-200">
+                                <strong class="text-slate-800 block mb-2"><i class="fas fa-balance-scale mr-2"></i>Тренировка "Слепые весы"</strong>
+                                <p class="text-sm text-slate-600 mb-2">Восстановление осевой нагрузки.</p>
+                                <ul class="list-decimal list-inside text-xs text-slate-600 space-y-1">
+                                    <li>Поставить двое идентичных напольных весов рядом.</li>
+                                    <li>Встать по одной ноге на каждые весы.</li>
+                                    <li>При правостороннем спазме вес часто смещается влево.</li>
+                                    <li>Задача: Глядя на циферблаты, добиться распределения веса 50/50 кг.</li>
+                                    <li>Удерживать баланс 60 сек с открытыми глазами, затем с закрытыми.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Clinical Protocol -->
+                    <div class="bg-white rounded-lg">
+                        <h4 class="font-bold text-lg text-teal-800 mb-4 border-b border-teal-100 pb-2">
+                            <span class="bg-teal-100 text-teal-800 px-2 py-1 rounded text-sm mr-2">Этап 2</span>
+                            Клинический протокол ЭМГ-БОС (Для правостороннего спазма)
+                        </h4>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div class="col-span-1">
+                                <h5 class="font-bold text-slate-700 text-sm mb-2">Где проводится?</h5>
+                                <p class="text-xs text-slate-600">В кабинетах нейрореабилитации или функциональной диагностики. Используются 2-4 канальные электромиографы (например, "Колибри", "Myomed").</p>
+                            </div>
+                            <div class="col-span-2">
+                                <h5 class="font-bold text-slate-700 text-sm mb-2">Схема наложения электродов</h5>
+                                <div class="flex space-x-4 mb-3">
+                                    <div class="flex-1 p-3 bg-red-50 border border-red-100 rounded">
+                                        <span class="text-xs font-bold text-red-800 block">Канал 1 (Правый)</span>
+                                        <span class="text-xs text-slate-600">Электроды на брюшко m. longissimus (зона спазма).<br><strong>Цель:</strong> Снизить активность (Down-training). Полоса на экране должна опускаться.</span>
+                                    </div>
+                                    <div class="flex-1 p-3 bg-green-50 border border-green-100 rounded">
+                                        <span class="text-xs font-bold text-green-800 block">Канал 2 (Левый)</span>
+                                        <span class="text-xs text-slate-600">Электроды симметрично слева.<br><strong>Цель:</strong> Поддерживать тонус или повысить его (Up-training).</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-500 italic">Игровая форма: Пациент управляет самолетом на экране. Чтобы лететь ровно, нужно расслабить правую мышцу и напрячь левую.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        };
+
+        // --- Logic: Rehab Section ---
+        function showRehabDetail(key) {
+            // UI: Activate Card
+            document.querySelectorAll('#rehab .interactive-card').forEach(c => c.classList.remove('active'));
+            document.getElementById(`card-${key}`).classList.add('active');
+
+            // Data: Populate Content
+            const container = document.getElementById('rehab-detail-container');
+            const titleEl = document.getElementById('rehab-detail-title');
+            const contentEl = document.getElementById('rehab-detail-content');
+
+            // Set Title based on key
+            let titleText = "";
+            if(key === 'sensory') titleText = "Сенсорные трюки (Geste Antagoniste)";
+            if(key === 'taping') titleText = "Кинезиотейпирование (Стандартные протоколы)";
+            if(key === 'bio') titleText = "БОС-терапия (Биологическая обратная связь)";
+
+            titleEl.textContent = titleText;
+            contentEl.innerHTML = rehabData[key];
+
+            // Show Container
+            container.classList.remove('hidden');
+            // Scroll to details slightly
+            container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function closeRehabDetail() {
+            document.getElementById('rehab-detail-container').classList.add('hidden');
+            document.querySelectorAll('#rehab .interactive-card').forEach(c => c.classList.remove('active'));
+        }
+
+        // --- Logic: Diagnosis ---
+        function showDiagDetail(stepKey) {
+            const box = document.getElementById('diag-detail-box');
+            box.classList.remove('border-teal-500');
+            void box.offsetWidth; 
+            box.classList.add('border-teal-500', 'animate-pulse-once');
+            
+            document.getElementById('diag-title').textContent = diagSteps[stepKey].title;
+            document.getElementById('diag-desc').textContent = diagSteps[stepKey].desc;
+        }
+
+        // --- Logic: Tabs ---
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.add('hidden'));
+            document.getElementById(tabId + '-content').classList.remove('hidden');
+        }
+
+        // --- Mobile Menu ---
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // --- Charts Init ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // Age Chart
+            new Chart(document.getElementById('ageDistributionChart').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['0-10', '11-20', '21-30', '31-40', '41-50', '51-60', '60+'],
+                    datasets: [{
+                        label: 'Женщины',
+                        data: [15, 25, 10, 15, 20, 35, 30],
+                        borderColor: '#0f766e',
+                        backgroundColor: 'rgba(15, 118, 110, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    }, {
+                        label: 'Мужчины',
+                        data: [15, 22, 10, 10, 12, 15, 10], 
+                        borderColor: '#94a3b8',
+                        borderDash: [5, 5],
+                        tension: 0.4
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+            });
+
+            // Botox Chart
+            new Chart(document.getElementById('botoxEfficacyChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['Цервикальная', 'Блефароспазм', 'Ларингеальная', 'Писчий спазм'],
+                    datasets: [{
+                        label: '% Улучшения',
+                        data: [85, 90, 80, 60],
+                        backgroundColor: ['#0f766e', '#14b8a6', '#5eead4', '#ccfbf1'],
+                        borderRadius: 6
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y', plugins: { legend: { display: false } } }
+            });
+
+            // Elderly Radar Chart
+            new Chart(document.getElementById('elderlyRiskChart').getContext('2d'), {
+                type: 'radar',
+                data: {
+                    labels: ['Когнитивные', 'Падения', 'Остеопороз', 'Хирургия', 'Дисфагия'],
+                    datasets: [{
+                        label: '60+ Женщины',
+                        data: [90, 85, 80, 75, 60],
+                        borderColor: '#f43f5e',
+                        backgroundColor: 'rgba(244, 63, 94, 0.2)'
+                    }, {
+                        label: 'Молодые',
+                        data: [30, 20, 10, 20, 40],
+                        borderColor: '#94a3b8'
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { r: { suggestedMin: 0, suggestedMax: 100 } } }
+            });
+        });
+    </script>
+    
+    <style>
+        @keyframes fade-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fade-in 0.3s ease-out forwards; }
+        @keyframes pulse-once { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        .animate-pulse-once { animation: pulse-once 0.3s ease-in-out; }
+    </style>
+</body>
+</html>
